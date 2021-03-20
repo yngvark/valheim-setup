@@ -2,6 +2,7 @@ if [[ -z $1 ]]; then
     ME=$(basename $0)
     echo "USAGE: $ME <directory of Valheim Backups>"
     echo "EXAMPLE: $ME /home/myself/valheim-server/config/backups"
+    exit 1
 fi
 
 
@@ -16,6 +17,6 @@ then
 fi
 
 cat <<EOF > upload-valheim-backup.sh
-echo Running backup at `date` >> /var/log/upload-valheim-backup.log
+echo Running backup at \$(date) >> /var/log/upload-valheim-backup.log
 rclone sync $VALHEIM_BACKUP_DIR jotta:/valheim-server/config/backups
 EOF
