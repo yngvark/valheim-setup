@@ -2,6 +2,8 @@
 
 I'm using cloud provider Hetzner, which has a firewall in their web interface.
 
+Using Ubuntu 20.04.
+
 * Add ports to Hetzner firewall
     * Valheim portsgoogle Valheim ports)
     * SSH port 22
@@ -18,6 +20,8 @@ usermod -aG sudo myself
 su myself
 ```
 
+sudo systemctl restart docker
+
 * Secure stuff: https://askubuntu.com/a/346863/575647
   * In `/etc/ssh/sshd_config`, change to 
 
@@ -30,8 +34,17 @@ PubkeyAuthentication yes
 systemctl restart sshd.service
 ```
 
+# Clone this repository
+
+```sh
+su myself
+git clone https://github.com/yngvark/valheim-setup.git
+git checkout main
+```
+
 
 # Install Docker
+
 ```sh
 ./install-docker.sh
 ```
@@ -74,10 +87,10 @@ rclone copy hello jotta:/
 Visit https://www.jottacloud.com/web/archive/list/name and see that the file is there (file is under
 "Archive, not "Synched").
 
-## Setup automatic backup
+## Setup automatic cron backup
 
 ```sh
-TODO
+./setup-valheim-backup.sh ~/valheim-server/config/backups
 ```
 
 
