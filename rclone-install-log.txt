@@ -1,0 +1,66 @@
+$ rclone config
+2021/03/20 09:32:43 NOTICE: Config file "/home/xxxxxxx/.config/rclone/rclone.conf" not found - using defaults
+No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q> n
+name> jotta
+Type of storage to configure.
+Enter a string value. Press Enter for the default ("").
+Choose a number from below, or type in your own value
+ 1 / 1Fichier
+   \ "fichier"
+ 2 / Alias for an existing remote
+   \ "alias"
+
+...
+
+Storage> jottacloud
+** See help for jottacloud backend at: https://rclone.org/jottacloud/ **
+
+Edit advanced config? (y/n)
+y) Yes
+n) No (default)
+y/n> n
+Remote config
+Choose authentication type:
+1: Standard authentication - use this if you're a normal Jottacloud user.
+2: Legacy authentication - this is only required for certain whitelabel versions of Jottacloud and not recommended for normal users.
+3: Telia Cloud authentication - use this if you are using Telia Cloud.
+Your choice> 1
+Generate a personal login token here: https://www.jottacloud.com/web/secure
+Login Token> REDACTED
+
+Do you want to use a non standard device/mountpoint e.g. for accessing files uploaded using the official Jottacloud client?
+
+y) Yes
+n) No (default)
+y/n> n
+--------------------
+[jotta]
+type = jottacloud
+client_id = jottacli
+client_secret = 
+tokenURL = https://id.jottacloud.com/auth/realms/jottacloud/protocol/openid-connect/token
+token = {"access_token": REDACTED}
+configVersion = 1
+--------------------
+y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d> y
+Current remotes:
+
+Name                 Type
+====                 ====
+jotta                jottacloud
+
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q> q
