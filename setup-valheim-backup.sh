@@ -17,7 +17,7 @@ then
 fi
 
 cat <<EOF > upload-valheim-backup.sh
-echo Running backup at \$(date) >> /var/log/upload-valheim-backup.log
+echo Running backup at \$(date) >> /tmp/upload-valheim-backup.log
 rclone sync $VALHEIM_BACKUP_DIR jotta:/valheim-server/config/backups
 EOF
 
