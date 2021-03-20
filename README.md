@@ -37,7 +37,7 @@ systemctl restart sshd.service
 # Clone this repository
 
 ```sh
-su myself
+su myself # If you haven't done this before
 git clone https://github.com/yngvark/valheim-setup.git
 git checkout main
 ```
@@ -90,6 +90,7 @@ Visit https://www.jottacloud.com/web/archive/list/name and see that the file is 
 ## Setup automatic cron backup
 
 ```sh
+su myself # If you haven't done this before
 ./setup-valheim-backup.sh ~/valheim-server/config/backups
 ```
 
@@ -98,15 +99,19 @@ Visit https://www.jottacloud.com/web/archive/list/name and see that the file is 
 See https://github.com/lloesche/valheim-server-docker#basic-docker-usage
 
 
-
 ```sh
 mkdir -p $HOME/valheim-server/config/worlds $HOME/valheim-server/data
 ```
 
-1. Copy run.sh from this repo to server, and `chmod +x run.sh`
-2. Edit secret
-3. Run:
+1. Copy run.sh from this repo to server
+2. Run:
 
 ```sh
+su myself # If you haven't done this before
+
+export VALHEIM_SERVER_PASS=mypass
+export VALHEIM_SERVER_NAME=MyServer
+export VALHEIM_WORLD_NAME=myworld
+
 ./run.sh
 ```
