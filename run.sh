@@ -28,3 +28,5 @@ docker run -d \
     -e SERVER_PUBLIC="true" \
     lloesche/valheim-server
 
+echo See server logs with:
+echo docker logs -f valheim-server
